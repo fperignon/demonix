@@ -1,5 +1,9 @@
-sudo: required
+language: nix
+sudo: true
 
 before_install:
-- sudo mkdir -m 0755 /nix && sudo chown travis /nix
-- sudo curl https://nixos.org/nix/install | sh
+- nix-env -i boost-1.63.0
+- nix-env -i cmake-3.7.2
+- nix-env -i fftw-double-3.3.6-pl1
+
+install: ./ci/install-demonix.sh
