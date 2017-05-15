@@ -5,4 +5,9 @@ before_install:
 - nix-env -i cmake-3.7.2
 - nix-env -i fftw-double
 
-install: ./ci/install-demonix.sh
+before_script:
+  - mkdir -p build
+  - cd build
+
+script:
+  - ../ci/install-demonix.sh
