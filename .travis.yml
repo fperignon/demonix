@@ -1,0 +1,2 @@
+before_install:
+- curl https://nixos.org/nix/install | sh
